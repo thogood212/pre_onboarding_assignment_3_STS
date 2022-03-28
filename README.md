@@ -11,8 +11,6 @@
 
 ### 1-2. KLUE/STS Dataset 구성
 
-![[출처] KLUE 공식 벤치마크 사이트](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/4f80ff8f-37f6-4148-a1e8-745e5171a997/Untitled.png)
-
 [출처] KLUE 공식 벤치마크 사이트
 
 - 총 13,224개의 데이터로 이루어져있습니다.
@@ -22,8 +20,6 @@
 ## 2. 모델 설명
 
 ### 2-1. Pre_trained 모델 설명 : KLUE/RoBERTa
-
-![[출처] KLUE 논문 : [https://arxiv.org/pdf/2105.09680.pdf](https://arxiv.org/pdf/2105.09680.pdf)](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/7dbfccf1-d5e7-4c97-9c9a-39b850ab1494/Untitled.png)
 
 [출처] KLUE 논문 : [https://arxiv.org/pdf/2105.09680.pdf](https://arxiv.org/pdf/2105.09680.pdf)
 
@@ -45,11 +41,8 @@
 
 ### 3-1. 하이퍼 파라미터 전 base_line
 
-![validation 실행 시 F1 : 0.94 , Pearsonr : 0.95](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/f677cf4a-3466-4ede-801b-36b7543bb72b/Untitled.png)
 
 validation 실행 시 F1 : 0.94 , Pearsonr : 0.95
-
-![Test 실행 시 F1 : 0.82 , Pearsonr : 0.84](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/6a1aab13-13b0-4fb5-9960-c72140979269/Untitled.png)
 
 Test 실행 시 F1 : 0.82 , Pearsonr : 0.84
 
@@ -84,8 +77,6 @@ Test 실행 시 F1 : 0.82 , Pearsonr : 0.84
     - batch_size: 64
     - weight_decay: 0.01
 
-![3개의 모델의 결과값 확인](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/834d7da5-cbc0-4e05-a45f-835153ec92b1/Untitled.png)
-
 3개의 모델의 결과값 확인
 
 비교 결과 : 각기 다른 방법으로 하이퍼 파라미터를 튜닝해보았고 그 중 직접 값을 입력하여 결과를 살펴본 A,B모델보다 random search의 Optuna 라이브러리를 사용하는 것이 F1, pearsonr score를 골고루 좋은 성능을 내었기 때문에 Optuna로 찾은 파라미터로 최종 결정 하였습니다.
@@ -95,8 +86,6 @@ Test 실행 시 F1 : 0.82 , Pearsonr : 0.84
 - huggingface 모듈을 찾아 훈련까지의 전과정을 찾고 선행 진행하였습니다.
 - Optuna를 사용하여 초기의 하이퍼파라미터 최적값을 찾아보았습니다.
 - REST API를 Flask_app을 통하여 구현하였습니다.
-
-![[그림1]](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/d31358c6-37f9-43c2-b0a8-027e4f9618c5/Untitled.png)
 
 [그림1]
 
@@ -116,15 +105,10 @@ Test 실행 시 F1 : 0.82 , Pearsonr : 0.84
 
 ## 5. 최종 결과 분석
 
-![[그림2] 유사한 문장을 입력한 결과창](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/b6c81a04-5b6e-416e-92b3-7d33d3d24044/Untitled.png)
-
 [그림2] 유사한 문장을 입력한 결과창
-
-![[그림3] 유사하지 않은 문장을 입력한 결과창](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/df1d2756-234f-4453-b8ae-60a31aa3f611/Untitled.png)
 
 [그림3] 유사하지 않은 문장을 입력한 결과창
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/df702998-9198-41f6-995b-573d6ccf6548/Untitled.png)
 
 위의 그림은 저희가 설정한 base line과 하이퍼 파라미터 튜닝 후의 모델의 성능을 비교한 그래프입니다.
 
